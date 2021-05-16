@@ -213,11 +213,79 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"enableStaging": false
-							}
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": {
+											"value": "@variables('storagecontainer')",
+											"type": "Expression"
+										},
+										"folder": {
+											"value": "@variables('storagefolder')",
+											"type": "Expression"
+										},
+										"file": {
+											"value": "@variables('storagefile')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "adlsgen2target",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": {
+											"value": "@variables('dlscontainer')",
+											"type": "Expression"
+										},
+										"folder": {
+											"value": "@variables('dlsfolder')",
+											"type": "Expression"
+										},
+										"file": {
+											"value": "@variables('dlsfile')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						},
 						{
-							"name": "CopydatatoSQL ",
+							"name": "CopydatatoSQL",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -278,8 +346,66 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"enableStaging": false
-							}
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": {
+											"value": "@variables('storagecontainer')",
+											"type": "Expression"
+										},
+										"folder": {
+											"value": "@variables('storagefolder')",
+											"type": "Expression"
+										},
+										"file": {
+											"value": "@variables('storagefile')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "sqltarget",
+									"type": "DatasetReference",
+									"parameters": {
+										"schemaname": {
+											"value": "@variables('schemaname')",
+											"type": "Expression"
+										},
+										"tablename": {
+											"value": "@variables('tablename')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
