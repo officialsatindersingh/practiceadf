@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "zalphadatafactory"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://zalphakv.vault.azure.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://zalphastorage.blob.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_tenant": {
+			"value": "ff22c348-e1f7-4d20-99da-9ba78785ccbf"
+		},
+		"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "d4fe8e57-732d-4183-906f-a4369a1b06bb"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://zalphadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_tenant": {
+			"value": "ff22c348-e1f7-4d20-99da-9ba78785ccbf"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "d4fe8e57-732d-4183-906f-a4369a1b06bb"
+		}
+	}
+}
