@@ -1,0 +1,22 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://zalphastorage.blob.core.windows.net/",
+			"tenant": "ff22c348-e1f7-4d20-99da-9ba78785ccbf",
+			"servicePrincipalId": "d4fe8e57-732d-4183-906f-a4369a1b06bb",
+			"servicePrincipalKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "clientsecret",
+				"secretVersion": ""
+			},
+			"accountKind": "BlobStorage"
+		}
+	}
+}
