@@ -1,0 +1,21 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://zalphadls.dfs.core.windows.net/",
+			"tenant": "ff22c348-e1f7-4d20-99da-9ba78785ccbf",
+			"servicePrincipalId": "d4fe8e57-732d-4183-906f-a4369a1b06bb",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "clientsecret"
+			}
+		}
+	}
+}
