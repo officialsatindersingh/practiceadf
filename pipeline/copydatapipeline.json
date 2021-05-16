@@ -45,7 +45,113 @@
 						"value": "@activity('getmetainformation').output.value",
 						"type": "Expression"
 					},
-					"isSequential": true
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Setstoragecontainer",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "storagecontainer",
+								"value": {
+									"value": "@item().storagecontainer",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setstoragefolder",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "storagefolder",
+								"value": {
+									"value": "@item().storagefolder",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setstoragefile",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "storagefile",
+								"value": {
+									"value": "@item().storagefile",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setdlscontainer",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "dlscontainer",
+								"value": {
+									"value": "@item().dlscontainer",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setdlsfolder",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "dlsfolder",
+								"value": {
+									"value": "@item().dlsfolder",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setdlsfile",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "dlsfile",
+								"value": {
+									"value": "@item().dlsfile",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Setschemaname",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "schemaname",
+								"value": {
+									"value": "@item().schemaname",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Settablename",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "tablename",
+								"value": {
+									"value": "@item().tablename",
+									"type": "Expression"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
