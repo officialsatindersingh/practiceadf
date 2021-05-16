@@ -1,0 +1,49 @@
+{
+	"name": "metatable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "storagecontainer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "storagefolder",
+				"type": "nvarchar"
+			},
+			{
+				"name": "storagefile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dlscontainer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dlsfolder",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dlsfile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "schemaname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tablename",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "metainfo"
+		}
+	}
+}
